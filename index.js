@@ -10,11 +10,8 @@ exports.App = class App {
   // Create a custom named function on the App to be applied to your records
   anonymize(records) {
     records.forEach((record) => {
-      // Use record `get` and `set` to read and write to your data
-      record.set(
-        "customer_email",
-        iAmHelping(stringHash(record.get("customer_email")))
-      );
+      print("record", record)
+
     });
 
     // Use records `unwrap` transform on CDC formatted records
