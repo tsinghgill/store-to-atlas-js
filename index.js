@@ -3,7 +3,7 @@ exports.App = class App {
   // Create a custom named function on the App to be applied to your records
   anonymize(records) {
     records.forEach((record) => {
-      print("record", record)
+      console.log("record", record)
 
     });
 
