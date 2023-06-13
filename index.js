@@ -1,10 +1,3 @@
-// Import any of your relevant dependencies
-const stringHash = require("string-hash");
-
-// Sample helper
-function iAmHelping(str) {
-  return `~~~${str}~~~`;
-}
 
 exports.App = class App {
   // Create a custom named function on the App to be applied to your records
@@ -31,13 +24,13 @@ exports.App = class App {
 
     let destination = await turbine.resources("tanveets-atlas");
 
+    await destination.write(anonymized, "aggregated");
+  }
+};
+
     // await destination.write(anonymized, "aggregated", {
     //   "document.id.strategy":"com.mongodb.kafka.connect.sink.processor.id.strategy.PartialValueStrategy",
     //   "document.id.strategy.partial.value.projection.list":"patient_id,order_id",
     //   "document.id.strategy.partial.value.projection.type":"AllowList",
     //   "writemodel.strategy":"com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneBusinessKeyStrategy",
     // });
-
-    await destination.write(anonymized, "aggregated");
-  }
-};
